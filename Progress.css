@@ -1,0 +1,188 @@
+.footer{
+    height: 284px;
+    width: 320px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;/*Используем, чтобы круговой индикатор выровнять по горизонтали*/
+    align-items: center;
+}
+.bottom{
+    height: 284px;
+    width: 320px;
+
+    margin: 0 auto;
+}
+.switch{
+    position: relative;
+    display: inline-block;
+    height: 24px;
+    width: 42px;
+    border-radius: 12px;
+    background-color: #DFE6F0;
+    cursor:pointer;
+}
+.switch input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1; /*Чтобы белая круглая кнопка срабатывала в любом месте*/
+}
+
+.switch input:checked + .round_button {
+    background-color: white;
+    transform: translateX(20px);
+}
+.switch input:checked +  .round_button::before {
+    transform: translateX(24px);
+}
+.switch:has(input:checked) {
+    background-color: #005DFF; /*Это для того, чтобы при переключении свича изменялся его цвет*/
+}
+.round_button{
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background-color: white;
+    
+    cursor:pointer;
+}
+.switch2{
+    position: relative;
+    display: inline-block;
+    margin-top: 22px;
+    height: 24px;
+    width: 42px;
+    border-radius: 12px;
+    background-color: #DFE6F0;
+    cursor:pointer;
+}
+.switch2 input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+.switch2 input:checked + .round_button2 {
+    background-color: white;
+    transform: translateX(20px);
+}
+.switch2 input:checked +  .round_button2::before {
+    transform: translateX(24px);
+}
+.switch2:has(input:checked) {
+    background-color: #005DFF; /*Это для того, чтобы при переключении свича изменялся его цвет*/
+}
+body:has(.switch2 input:checked) .footer,
+body:has(.switch2 input:checked) #elem > li:nth-child(1),
+body:has(.switch2 input:checked) #elem > li:nth-child(2),
+body:has(.switch2 input:checked) #desc > li:nth-child(n+2),
+body:has(.switch2 input:checked) > ul > div {
+    display: none;
+}/*Этот участок кода отвечает за скрытие элементов при нажатии кнопки Hide*/
+.round_button2{
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background-color: white;
+    cursor:pointer;
+}
+.value{
+   height: 24px;
+   width: 42px;
+   border-radius: 12px;
+   border: 1px solid black;
+   transform: translateY(-23.5px);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.value input{
+    border:none;
+    width: 26px;
+    background: transparent;
+    text-align: center;
+    margin: 0 auto;
+}
+.text{
+    list-style-type: none
+}
+#desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    height: 154px;
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+    top: -320px;
+    left: 55%;
+
+    width: 250px;
+}
+#desc li{
+    margin: 0;
+    height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+
+.progress-container {
+    width: 100px;
+    height: 100px;
+}
+
+.progress-circle {
+    width: 100%;
+    height: 100%;
+}
+
+.progress-track,
+.progress-value {
+    fill: none;
+    stroke-width: 8;
+}
+
+.progress-track {
+    stroke: #edf2f5;
+}
+
+.progress-value {
+    stroke: #0866ff;
+    stroke-linecap: round;
+    stroke-dasharray: 263.89;
+    stroke-dashoffset: 263.89;
+}
+.fillingCircle{
+  width: 150px;
+  height: 150px;
+  background-color: #0866ff;
+  border-radius: 50%;
+}
+@media (max-width:380px) {/*Использую это для адаптивной верстки, чтобы надписи не наезжали друг на друга*/
+    #desc {
+    left: 60%;
+    }
+}
+@media (max-width:350px) {/*Использую это для адаптивной верстки, чтобы надписи не наезжали друг на друга*/
+    #desc {
+    left: 65%;
+    }
+}
+@media (max-width:320px) {/*Использую это для адаптивной верстки, чтобы надписи не наезжали друг на друга*/
+    #desc {
+    left: 70%;
+    }
+}
+@media (max-width:280px) {/*Использую это для адаптивной верстки, чтобы надписи не наезжали друг на друга*/
+    #desc {
+    left: 80%;
+    }
+}
